@@ -1,6 +1,19 @@
-from django.conf.urls import url
-from qa.views import question
+#from django.conf.urls import url
+#from qa.views import question
+
+#urlpatterns = [
+ #   url(r'^(?P<num>\d+)/$', question),
+#]
+from django.urls import path
+
+from . import views
 
 urlpatterns = [
-    url(r'^(?P<num>\d+)/$', question),
+    path('', views.test, name='test'),
+    path('login/', views.test, name='test'),
+    path('signup/', views.test, name='test'),
+    path('question/<int:quetion_id>', views.test, name='test'),
+    path('ask/', views.test, name='test'),
+    path('popular/', views.test, name='test'),
+    path('new/', views.test, name='test'),
 ]
