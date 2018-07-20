@@ -20,26 +20,26 @@ Including another URLconf
 #    url(r'^admin/', admin.site.urls),
 #]
 
-#from django.conf.urls import include, url, patterns 
-#from django.contrib import admin
-#admin.autodiscover()
-#
-#urlpatterns = [  
-#    url(r'^$', 'qa.views.test'),
-#    url(r'^login/.*$', 'qa.views.test'),
-#    url(r'^signup/.*$', 'qa.views.test'),
-#    url(r'^question/\d+/$', 'qa.views.test'),
-#    url(r'^ask/.*$', 'qa.views.test'),
-#    url(r'^popular/.*$', 'qa.views.test'),
-#    url(r'^new/.*$', 'qa.views.test')
-#]
-
+from django.conf.urls import include, url, patterns 
 from django.contrib import admin
-from django.urls import path, include
+admin.autodiscover()
 
-urlpatterns = [
-    url(r'^', include("qa.urls")),
-    url(r'^admin/', admin.site.urls),
+urlpatterns = [  
+    url(r'^$', 'qa.views.test'),
+    url(r'^login/.*$', 'qa.views.test'),
+    url(r'^signup/.*$', 'qa.views.test'),
+    url(r'^question/\d+/$', 'qa.views.test'),
+    url(r'^ask/.*$', 'qa.views.test'),
+    url(r'^popular/.*$', 'qa.views.test'),
+    url(r'^new/.*$', 'qa.views.test')
+]
+
+#from django.contrib import admin
+#from django.urls import path, include
+
+#urlpatterns = [
+#    url(r'^', include("qa.urls")),
+#    url(r'^admin/', admin.site.urls),
 ]
 #urlpatterns = [
 #    path('admin/', admin.site.urls),
