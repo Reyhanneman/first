@@ -13,58 +13,34 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-#from django.conf.urls import url
-#from django.contrib import admin
+from django.contrib import admin
+from django.urls import path, include
 
-#urlpatterns = [
-#    url(r'^admin/', admin.site.urls),
-#]
 
-#from django.conf.urls import include, url, patterns 
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('qa.urls'))
+]
+
+#from django.conf.urls import patterns, include, url
+
 #from django.contrib import admin
 #admin.autodiscover()
 
-#urlpatterns = [  
-#    url(r'^$', 'qa.views.test'),
-#    url(r'^login/.*$', 'qa.views.test'),
-#    url(r'^signup/.*$', 'qa.views.test'),
-#    url(r'^question/\d+/$', 'qa.views.test'),
-#    url(r'^ask/.*$', 'qa.views.test'),
-#    url(r'^popular/.*$', 'qa.views.test'),
-#   url(r'^new/.*$', 'qa.views.test')
-#]
+#from qa import views
 
-#from django.contrib import admin
-#from django.urls import path, include
-
-#urlpatterns = [
-#    url(r'^', include("qa.urls")),
-#    url(r'^admin/', admin.site.urls),
-
-    
-    
-    
-    
-    
-from django.conf.urls import patterns, include, url
-
-from django.contrib import admin
-admin.autodiscover()
-
-from qa import views
-
-urlpatterns = patterns('',
+#urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'ask.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
-    url(r'^question/', include('qa.urls')),
-    url(r'^$', include('qa.urls')),
-    url(r'^login/.*$',views.login_view),
-    url(r'^signup/.*$',views.signup),
-    url(r'^ask/.*$',views.question_add),
-    url(r'^popular/.*$',views.popular),
-    url(r'^answer/.*$',views.answer_add),
-    url(r'^question/(?P<question_id>[0-9]+)/answer/$', views.answer_add, name='answer_add'),
-    url(r'^new/.*$',views.test),
-    url(r'^admin/', include(admin.site.urls)),
-)
+#    url(r'^question/', include('qa.urls')),
+#    url(r'^$', include('qa.urls')),
+#    url(r'^login/.*$',views.login_view),
+#    url(r'^signup/.*$',views.signup),
+#    url(r'^ask/.*$',views.question_add),
+#    url(r'^popular/.*$',views.popular),
+#    url(r'^answer/.*$',views.answer_add),
+#    url(r'^question/(?P<question_id>[0-9]+)/answer/$', views.answer_add, name='answer_add'),
+#    url(r'^new/.*$',views.test),
+#    url(r'^admin/', include(admin.site.urls)),
+#)
